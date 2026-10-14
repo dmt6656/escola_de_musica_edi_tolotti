@@ -341,6 +341,10 @@ document.querySelectorAll('[data-cfg]').forEach(el => {
 if (CONFIG[el.dataset.cfg]) el.textContent = CONFIG[el.dataset.cfg];
 });
 document.querySelectorAll('[data-cfg-link]').forEach(el => { el.href = LINKS[el.dataset.cfgLink]; });
+document.querySelectorAll('[data-inst]').forEach(el => {
+el.href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent('Olá, gostaria de mais informações sobre ' + el.dataset.inst.toLowerCase() + '!');
+el.target = '_blank'; el.rel = 'noopener';
+});
 document.getElementById('mapa').src = 'https://maps.google.com/maps?q=' + MAPA_Q + '&z=16&output=embed';
 document.getElementById('ano').textContent = new Date().getFullYear();
 (function(){
